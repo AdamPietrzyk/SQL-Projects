@@ -43,5 +43,6 @@ GROUP BY bt.BloodType, rf.RhFactor
 ORDER BY BloodType;
 
 The result is:
-https://github.com/AdamPietrzyk/SQL-Projects/assets/127242593/ae07f107-efb9-40ff-ac97-2c5585280ebb
+<img width="277" alt="Zrzut ekranu 2023-05-10 o 19 22 06" src="https://github.com/AdamPietrzyk/SQL-Projects/assets/127242593/ae07f107-efb9-40ff-ac97-2c5585280ebb">
+
 
