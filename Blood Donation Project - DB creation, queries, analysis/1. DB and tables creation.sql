@@ -1,6 +1,5 @@
 ######## DATABASE AND TABLES CREATION SECTION
 
-DROP DATABASE Blood_Donation;
 CREATE DATABASE IF NOT EXISTS Blood_Donation;
 
 USE Blood_Donation;
@@ -8,103 +7,103 @@ USE Blood_Donation;
 CREATE TABLE BloodType (
 	ID_BloodType INT AUTO_INCREMENT NOT NULL,
 	BloodType ENUM('0', 'A', 'B', 'AB'),
-    PRIMARY KEY(ID_BloodType)
+    	PRIMARY KEY(ID_BloodType)
 );
 
 CREATE TABLE RhFactor (
 	ID_RhFactor INT AUTO_INCREMENT NOT NULL,
-    RhFactor ENUM('+', '-'),
-    PRIMARY KEY(ID_RhFactor)
+	RhFactor ENUM('+', '-'),
+	PRIMARY KEY(ID_RhFactor)
 );
 
 CREATE TABLE Inventory (
-    ID_BloodType INT NOT NULL,
-    ID_RhFactor INT NOT NULL,
-    Quantity INT,
-    PRIMARY KEY (ID_BloodType, ID_RhFactor),
-    FOREIGN KEY (ID_BloodType) REFERENCES BloodType(ID_BloodType),
-    FOREIGN KEY (ID_RhFactor) REFERENCES RhFactor(ID_RhFactor)
+    	ID_BloodType INT NOT NULL,
+  	ID_RhFactor INT NOT NULL,
+  	Quantity INT,
+    	PRIMARY KEY (ID_BloodType, ID_RhFactor),
+    	FOREIGN KEY (ID_BloodType) REFERENCES BloodType(ID_BloodType),
+   	FOREIGN KEY (ID_RhFactor) REFERENCES RhFactor(ID_RhFactor)
 );
 
 CREATE TABLE Donator_Level (
 	ID_Donator_Level INT NOT NULL AUTO_INCREMENT,
-    Donator_Level ENUM(
+	Donator_Level ENUM(
 		'Brak',
-        'Meritorious Honorable Blood Donor 1 st',
-        'Meritorious Honorable Blood Donor 2 st',
-        'Meritorious Honorable Blood Donor 3 st'),
+		'Meritorious Honorable Blood Donor 1 st',
+		'Meritorious Honorable Blood Donor 2 st',
+		'Meritorious Honorable Blood Donor 3 st'),
 	PRIMARY KEY (ID_Donator_Level)
     );
 
 CREATE TABLE Patients(
 	ID_Patient INT AUTO_INCREMENT NOT NULL,
-    first_name varchar(50),
-    last_name varchar(50),
-    gender ENUM('M', 'F'),
-    phone_number varchar(20),
-    email varchar(50),
+    	first_name varchar(50),
+    	last_name varchar(50),
+    	gender ENUM('M', 'F'),
+    	phone_number varchar(20),
+    	email varchar(50),
 	address_street varchar(50),
 	address_zipcode varchar(50),
 	address_city varchar(50),
-    ID_BloodType INT,
-    ID_RhFactor INT,
-    DonatedAmount INT,
-    ID_Donator_Level INT,
+   	ID_BloodType INT,
+   	ID_RhFactor INT,
+   	DonatedAmount INT,
+   	ID_Donator_Level INT,
 	PRIMARY KEY (ID_Patient),
-    FOREIGN KEY (ID_BloodType) REFERENCES BloodType(ID_BloodType),
+    	FOREIGN KEY (ID_BloodType) REFERENCES BloodType(ID_BloodType),
 	FOREIGN KEY (ID_RhFactor) REFERENCES RhFactor(ID_RhFactor),
-    FOREIGN KEY (ID_Donator_Level) REFERENCES Donator_Level(ID_Donator_Level)
+    	FOREIGN KEY (ID_Donator_Level) REFERENCES Donator_Level(ID_Donator_Level)
     );
         
 CREATE TABLE Staff (
 	ID_Staff INT NOT NULL AUTO_INCREMENT,
 	first_name varchar(50),
-    last_name varchar(50),
-    phone_number varchar(20),
-    email varchar(20),
-    phlebotomist ENUM('Doctor', 'Nurse', 'Paramedic'),
-    PRIMARY KEY (ID_Staff)
+   	last_name varchar(50),
+    	phone_number varchar(20),
+    	email varchar(20),
+    	phlebotomist ENUM('Doctor', 'Nurse', 'Paramedic'),
+    	PRIMARY KEY (ID_Staff)
 );
 
 CREATE TABLE Institutions (
 	ID_Institution INT NOT NULL AUTO_INCREMENT,
-    i_name varchar(50),
+    	i_name varchar(50),
 	phone_number varchar(20),
-    email varchar(50),
+    	email varchar(50),
 	address_street varchar(20),
 	address_zipcode varchar(20),
 	address_city varchar(20),
-    PRIMARY KEY (ID_Institution)
+    	PRIMARY KEY (ID_Institution)
 );
 
 CREATE TABLE Donations (
 	ID_Donation INT NOT NULL AUTO_INCREMENT,
-    Donation_Date DATETIME,
-    Next_Possible_Donation DATETIME,
-    DonationQuantity INT,
-    ID_Patient INT,
-    ID_Staff INT,
-    ID_Institution INT,
-    PRIMARY KEY (ID_Donation),
-    FOREIGN KEY (ID_Patient) REFERENCES Patients(ID_Patient),
-    FOREIGN KEY (ID_Staff) REFERENCES Staff(ID_Staff),
-    FOREIGN KEY (ID_Institution) REFERENCES Institutions(ID_Institution)
+    	Donation_Date DATETIME,
+    	Next_Possible_Donation DATETIME,
+    	DonationQuantity INT,
+    	ID_Patient INT,
+    	ID_Staff INT,
+    	ID_Institution INT,
+    	PRIMARY KEY (ID_Donation),
+    	FOREIGN KEY (ID_Patient) REFERENCES Patients(ID_Patient),
+    	FOREIGN KEY (ID_Staff) REFERENCES Staff(ID_Staff),
+    	FOREIGN KEY (ID_Institution) REFERENCES Institutions(ID_Institution)
 );
 
 CREATE TABLE Recipients (
 	ID_Recipient INT NOT NULL AUTO_INCREMENT,
 	first_name varchar(50),
-    last_name varchar(50),
-    gender ENUM('M', 'F'),
-    phone_number varchar(20),
-    email varchar(50),
+    	last_name varchar(50),
+    	gender ENUM('M', 'F'),
+    	phone_number varchar(20),
+    	email varchar(50),
 	address_street varchar(50),
 	address_zipcode varchar(50),
 	address_city varchar(50),
-    ID_BloodType INT,
-    ID_RhFactor INT,
+    	ID_BloodType INT,
+    	ID_RhFactor INT,
 	PRIMARY KEY (ID_Recipient),
-    FOREIGN KEY (ID_BloodType) REFERENCES BloodType(ID_BloodType),
+    	FOREIGN KEY (ID_BloodType) REFERENCES BloodType(ID_BloodType),
 	FOREIGN KEY (ID_RhFactor) REFERENCES RhFactor(ID_RhFactor)
 );
 
@@ -114,22 +113,18 @@ CREATE TABLE Transfusions (
 	ID_Recipient INT, #receiver
 	date DATETIME,
 	Quantity INT,
-    ID_Institution INT,
-    ID_Staff INT,
+ 	ID_Institution INT,
+    	ID_Staff INT,
 	PRIMARY KEY (ID_Transfusion),
 	FOREIGN KEY (ID_Patient) REFERENCES Patients(ID_Patient),
 	FOREIGN KEY (ID_Recipient) REFERENCES Recipients(ID_Recipient),
-    FOREIGN KEY (ID_Institution) REFERENCES Institutions(ID_Institution),
-    FOREIGN KEY (ID_Staff) REFERENCES Staff(ID_Staff)
+    	FOREIGN KEY (ID_Institution) REFERENCES Institutions(ID_Institution),
+    	FOREIGN KEY (ID_Staff) REFERENCES Staff(ID_Staff)
 );
 
 
 
-
-
-
 ######## TRIGGERS CREATION SECTION
-
 
 # This trigger automatically calculates the sum value of the amount of blood donated by a given donor.
 # The trigger checks all the new records that are INSERTed in Donations table, and then sums quantity of each donor donations.
@@ -203,7 +198,6 @@ DELIMITER ;
 
 
 
-
 # This trigger automatically sums all the blood that is donated and takes into account all the combinations of Blood Types and Rh Factors.
 # So this triggers automatically puts data into Inventory. The Inventory table holds data of total quantity of each combination of Blood Type and Rh Factor.
 DELIMITER //
@@ -230,6 +224,7 @@ BEGIN
     );
 END; //
 DELIMITER ;
+
 
 
 # This trigger automatically subtracts the quantity of blood from the Inventory table that goes from the donor to the recipient.
