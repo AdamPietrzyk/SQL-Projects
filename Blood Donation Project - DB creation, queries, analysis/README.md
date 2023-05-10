@@ -29,20 +29,18 @@ In order to analyze the data, I have prepared 16 questions of varying difficulty
 
 For example, a question number 7 is "What is the percentage of each combination of blood type and Rh factor in the overall blood volume?"
 And the query that is going to give an answer is:
-SELECT
-	bt.BloodType,
-    rf.RhFactor,
-    COUNT(*),
-    ROUND(count(*) * 100.0 / sum(count(*)) Over(), 2) AS Percentage
-FROM Patients p
-	JOIN BloodType bt
-		ON p.ID_BloodType = bt.ID_BloodType
-	JOIN RhFactor rf
-		ON p.ID_RhFactor = rf.ID_RhFactor
-GROUP BY bt.BloodType, rf.RhFactor
-ORDER BY BloodType;
+
+
+<img width="533" alt="Zrzut ekranu 2023-05-10 o 19 26 20" src="https://github.com/AdamPietrzyk/SQL-Projects/assets/127242593/e11455a5-5967-42ab-9cfe-0fd9d397d2cb">
+
 
 The result is:
+
+
 <img width="277" alt="Zrzut ekranu 2023-05-10 o 19 22 06" src="https://github.com/AdamPietrzyk/SQL-Projects/assets/127242593/ae07f107-efb9-40ff-ac97-2c5585280ebb">
+
+
+### Data visualisation
+
 
 
