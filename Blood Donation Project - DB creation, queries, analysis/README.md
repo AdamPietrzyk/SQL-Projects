@@ -23,3 +23,25 @@ The database consists of 10 tables as below:
 In this project, I also implemented triggers to optimize the operations performed.
 For example, adding each new record to the "Donations" table automatically triggers the summing of values in the "Inventory" table, ensuring that the total blood inventory is always up to date. Similarly, adding each new record to the "Transfusions" table results in subtracting the corresponding amount of blood from the Inventory table.
 Another example of trigger usage is automating the calculation of the total amount of blood donated by each patient in the "Patients" table. Additionally, when a patient exceeds a certain threshold of blood donation, their status is automatically updated.
+
+### Analysis of data
+In order to analyze the data, I have prepared 16 questions of varying difficulty levels. To answer them, I have created 16 SQL queries. All the questions along with their queries can be found in the file "3. Queries and analysis".
+
+For example, a question number 7 is "What is the percentage of each combination of blood type and Rh factor in the overall blood volume?"
+And the query that is going to give an answer is:
+SELECT
+	bt.BloodType,
+    rf.RhFactor,
+    COUNT(*),
+    ROUND(count(*) * 100.0 / sum(count(*)) Over(), 2) AS Percentage
+FROM Patients p
+	JOIN BloodType bt
+		ON p.ID_BloodType = bt.ID_BloodType
+	JOIN RhFactor rf
+		ON p.ID_RhFactor = rf.ID_RhFactor
+GROUP BY bt.BloodType, rf.RhFactor
+ORDER BY BloodType;
+
+The result is:
+https://github.com/AdamPietrzyk/SQL-Projects/assets/127242593/ae07f107-efb9-40ff-ac97-2c5585280ebb
+
