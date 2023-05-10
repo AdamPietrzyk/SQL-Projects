@@ -66,3 +66,7 @@ The second screenshot shows the dashboard with active filters. The highlighted e
 
 
 The dashboard clearly shows that when considering the above filters, 37 males have donated blood (blood type 0+), which accounts for 29% of the total. Among these males, 24 individuals donated blood at Institution_B, while 13 individuals donated blood at Institution_A.
+
+
+## Summary
+The project I have completed is relatively simple yet interesting. Regarding possible future steps, I would like to develop a basic web application using Python that will serve as a convenient interface for interacting with this database.
