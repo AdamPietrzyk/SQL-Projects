@@ -10,13 +10,13 @@ INSERT INTO RhFactor VALUES
 
 INSERT INTO Inventory VALUES
 	('1', '1', NULL),
-    ('1', '2', NULL),
-    ('2', '1', NULL),
+    	('1', '2', NULL),
+    	('2', '1', NULL),
 	('2', '2', NULL),
-    ('3', '1', NULL),
-    ('3', '2', NULL),
-    ('4', '1', NULL),
-    ('4', '2', NULL);
+    	('3', '1', NULL),
+    	('3', '2', NULL),
+    	('4', '1', NULL),
+    	('4', '2', NULL);
 
 INSERT INTO Donator_Level VALUES
 	(1, 'Brak'),
@@ -603,5 +603,5 @@ INSERT INTO Recipients
 INSERT INTO Transfusions
 	VALUES
 		(NULL, 1, 1, '2023-03-08 09:15:01', 450, 1, 5),
-        (NULL, 119, 23, '2023-03-08 09:15:01', 450, 2, 2),
-        (NULL, 7, 9, '2023-03-08 09:15:01', 450, 1, 5);
+        	(NULL, 119, 23, '2023-03-08 09:15:01', 450, 2, 2),
+ 		(NULL, 7, 9, '2023-03-08 09:15:01', 450, 1, 5);
