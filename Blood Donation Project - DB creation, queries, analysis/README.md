@@ -49,7 +49,9 @@ The result is:
 For better and more convenient visualization of the results, I used PowerBI software. After loading the data, I created a simple dashboard, which is presented below. Due to limitations in sharing the dashboard, I am attaching two files. The first file is a screenshot of a dashboard, and it does not have any active filters applied.
 
 
-[look1.pdf](https://github.com/AdamPietrzyk/SQL-Projects/files/11444571/look1.pdf)
+
+<img width="1393" alt="Zrzut ekranu 2023-05-10 o 19 34 55" src="https://github.com/AdamPietrzyk/SQL-Projects/assets/127242593/1b16bc8e-4c3e-4b47-90a8-993c16487048">
+
 
 
 The second screenshot shows the dashboard with active filters. The highlighted elements correspond to the following applied filters:
@@ -58,7 +60,8 @@ The second screenshot shows the dashboard with active filters. The highlighted e
 
 
 
-[look2.pdf](https://github.com/AdamPietrzyk/SQL-Projects/files/11444591/look2.pdf)
+<img width="1393" alt="Zrzut ekranu 2023-05-10 o 19 35 08" src="https://github.com/AdamPietrzyk/SQL-Projects/assets/127242593/a0b203b7-2d17-46c1-a5e6-610438b9f33b">
+
 
 
 
